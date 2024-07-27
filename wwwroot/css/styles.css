@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  padding: 50px 20px;
+}
+
+.card {
+  background: rgb(51, 180, 196);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+#creation-section {
+  height: auto;
+}
+
+#lembreteList {
+  height: auto;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+input {
+  background: white;
+  color: rgb(64, 64, 64);
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+}
+
+input[type=date] {
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+  border-color: rgb(51, 180, 196);
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  background: rgb(51, 180, 196);
+  transition: 0.3s;
+}
+
+button:hover {
+  color: rgb(51, 180, 196);
+  background: white;
+}
+
+.date-group {
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgb(64, 64, 64);
+  border-radius: 5px;
+}
+
+.date-group h2 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: 700;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.lembrete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid rgb(51, 180, 196);
+  border-radius: 5px;
+  margin-top: 10px;
+  background: white;
+  color: rgb(64, 64, 64);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.delete {
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=styles.css.map */
