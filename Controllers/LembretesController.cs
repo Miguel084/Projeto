@@ -3,6 +3,7 @@ using LembreteApp.Services;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using System.Collections.Generic;
+using LembreteApp.Interfaces;
 
 namespace LembreteApp.Controllers
 {
@@ -10,16 +11,19 @@ namespace LembreteApp.Controllers
     [ApiController]
     public class LembretesController : ControllerBase
     {
-        private readonly LembreteService _lembreteService;
+        private readonly ILembreteService _lembreteService;
 
-        public LembretesController(LembreteService lembreteService)
+        public LembretesController(ILembreteService lembreteService)
         {
             _lembreteService = lembreteService;
         }
 
         [HttpGet]
-        public ActionResult<List<Lembrete>> Get() =>
-            _lembreteService.Get();
+        public ActionResult<List<Lembrete>> Get()
+        {
+            var lembretes = _lembreteService.Get();
+            return Ok(lembretes); // Retorna um OkObjectResult que encapsula a lista de Lembrete
+        }
 
         [HttpGet("{id:length(24)}", Name = "GetLembrete")]
         public ActionResult<Lembrete> Get(string id)
@@ -44,7 +48,7 @@ namespace LembreteApp.Controllers
 
             _lembreteService.Create(lembrete);
 
-            return CreatedAtRoute("GetLembrete", new { id = lembrete.Id.ToString() }, lembrete);
+            return CreatedAtRoute("GetLembrete", new { id = lembrete.Id?.ToString() }, lembrete);
         }
 
         [HttpPut("{id:length(24)}")]

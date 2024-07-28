@@ -1,13 +1,15 @@
 using LembreteApp.Models;
 using MongoDB.Driver;
 using System.Collections.Generic;
+using LembreteApp.Interfaces;
 
 namespace LembreteApp.Services
 {
-    public class LembreteService
+    public class LembreteService : ILembreteService
     {
         private readonly IMongoCollection<Lembrete> _lembretes;
-
+        
+        
         public LembreteService(IMongoClient client)
         {
             var database = client.GetDatabase("LembreteDb");
